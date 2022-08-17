@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colour Changer</title>
+</head>
+<body style="background-color: aquamarine;">
+    <h3> Background Changer</h3>
+    <button id = "Red" onclick="red()">Red</button>
+    <button id = "Green" onclick="green()">Green</button>
+    <button id = "yellow" onclick="yellow()">Yellow</button>
+    <button id="reset" onclick="reset()">Reset</button>
+
+    <script>
+       window.onload = function () {
+            let saveDesign = localStorage.getItem('saveDesign');
+            if (saveDesign == null || saveDesign == undefined) {
+                document.body.style.background = 'coral';
+                document.body.style.color = "white"; 
+            }else{
+                //setting the color
+                saveDesign = JSON.parse(saveDesign);
+                let background = saveDesign['background'];
+                let color  = saveDesign['color'];
+                //apply the color set
+                document.body.style.background = background;
+                document.body.style.color = color;
+               
+            }
+        }
+        
+        function red () {
+                document.body.style.background = 'red';
+                document.body.style.color = 'black';
+                const bgcolor = {
+                   'background' : 'red',
+                    'color' : 'black'
+                }
+                //save the saveDesign
+             let   saveDesign = localStorage.getItem('saveDesign');
+             if (saveDesign == null ||saveDesign == undefined) {
+                localStorage.setItem('saveDesign', JSON.stringify(bgcolor));
+             }else{
+                localStorage.setItem('saveDesign', JSON.stringify(bgcolor));
+             }
+
+        }
+
+        function green () {
+                document.body.style.background = 'green';
+                document.body.style.color = 'black';
+                const bgcolor = {
+                   'background' : 'green',
+                    'color' : 'black'
+                }
+                //save the saveDesign
+             let   saveDesign = localStorage.getItem('saveDesign');
+             if (saveDesign == null ||saveDesign == undefined) {
+                localStorage.setItem('saveDesign', JSON.stringify(bgcolor));
+             }else{
+                localStorage.setItem('saveDesign', JSON.stringify(bgcolor));
+             }
+
+        }
+
+        function yellow () {
+                document.body.style.background = 'yellow';
+                document.body.style.color = 'black';
+                const bgcolor = {
+                   'background' : 'yellow',
+                    'color' : 'black'
+                }
+                //save the saveDesign
+             let   saveDesign = localStorage.getItem('saveDesign');
+             if (saveDesign == null ||saveDesign == undefined) {
+                localStorage.setItem('saveDesign', JSON.stringify(bgcolor));
+             }else{
+                localStorage.setItem('saveDesign', JSON.stringify(bgcolor));
+             }
+
+        }
+
+        function reset () {
+         location.remove;
+                document.body.style.background = 'coral';
+                document.body.style.color = 'black';
+                const bgcolor = {
+                   'background' : 'coral',
+                    'color' : 'black'
+                }
+                 //save the saveDesign
+              let   saveDesign = localStorage.getItem('saveDesign');
+              if (saveDesign == null ||saveDesign == undefined) {
+                localStorage.setItem('saveDesign', JSON.stringify(bgcolor));
+              }else{
+               localStorage.setItem('saveDesign', JSON.stringify(bgcolor));
+               }
+
+        }
+    </script>
+
+
+</body>
+</html>
